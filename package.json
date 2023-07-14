@@ -1,4 +1,5 @@
 {
+  "homepage": "https://pawel-w88.github.io/spa-final-project-pawel-w88",
   "name": "spa-final-project",
   "private": true,
   "version": "0.0.0",
@@ -6,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

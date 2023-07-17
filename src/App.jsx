@@ -1,25 +1,31 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import PacmanLoader from "react-spinners/PacmanLoader";
 import ThemeContext from "./ThemeContext";
 import "./App.css";
 
 function App() {
   const [generateAlibi, setGenerateAlibi] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const fetchAlibi = (excuse) => {
-    Axios.get(`https://excuser-three.vercel.app/v1/excuse/${excuse}/`).then(
-      (res) => {
-        setGenerateAlibi(res.data[0].excuse);
-      }
-    );
+    setLoading(true);
+    setTimeout(() => {
+      Axios.get(`https://excuser-three.vercel.app/v1/excuse/${excuse}/`).then(
+        (res) => {
+          setGenerateAlibi(res.data[0].excuse);
+          setLoading(false);
+        }
+      );
+    }, 3000);
   };
 
   const [isDarkMode, setIsDarkMode] = useState(false);
-
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  const googleTranslateElementInit = () => {
+  var googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
         pageLanguage: "en",
@@ -28,6 +34,7 @@ function App() {
       "google_translate_element"
     );
   };
+
   useEffect(() => {
     var addScript = document.createElement("script");
     addScript.setAttribute(
@@ -95,10 +102,18 @@ function App() {
             Gaming
           </button>
         </div>
-        <p className="text">{generateAlibi}</p>
-        <button className="glow-on-hover theme" onClick={toggleTheme}>
-          Toggle Theme
-        </button>
+        <div className="spinner">
+          {!loading ? (
+            <p className="text">{generateAlibi}</p>
+          ) : (
+            <div>
+              <PacmanLoader color={isDarkMode ? "white" : "hsla(168, 5%, 3%, 1)"} size={100} />
+            </div>
+          )}
+          <button className="glow-on-hover theme" onClick={toggleTheme}>
+            Toggle Theme
+          </button>
+        </div>
       </div>
     </ThemeContext.Provider>
   );

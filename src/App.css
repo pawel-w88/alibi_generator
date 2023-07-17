@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  /* min-height: 100vh; */
   font-family: "Times New Roman", Times, serif;
   text-align: center;
 }
@@ -98,7 +97,19 @@ p {
   border-radius: 10px;
 }
 
-.skiptranslate{
+.goog-te-combo {
+  width: 150px;
+  margin: 10px 20px;
+  height: 50px;
+  outline: none;
+  color: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.skiptranslate {
   position: absolute;
   top: 20px;
   right: 0;
@@ -110,6 +121,18 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.spinner span {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.spinner button {
+  margin-top: 50px;
 }
 
 @keyframes glowing {
@@ -129,6 +152,12 @@ p {
     font-size: 4rem;
     display: block;
     width: 100vw;
+    margin-top: 20px;
+  }
+
+  .glow-on-hover{
+    width: 180px;
+    margin: 10px;
   }
 
   .theme {
@@ -139,6 +168,11 @@ p {
     display: block;
     width: 100vw;
   }
+  .skiptranslate {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 @media (max-width: 769px) {
@@ -146,5 +180,27 @@ p {
     font-size: 2rem;
     display: block;
     width: 100vw;
+  }
+  .skiptranslate {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: 0;
+  }
+  .glow-on-hover {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    margin-top: 50px;
+  }
+  .skiptranslate {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }

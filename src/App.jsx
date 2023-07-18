@@ -5,6 +5,7 @@ import ThemeContext from "./ThemeContext";
 import "./App.css";
 
 function App() {
+  // Axios API
   const [generateAlibi, setGenerateAlibi] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -20,12 +21,15 @@ function App() {
     }, 3000);
   };
 
+  // React Context
   const [isDarkMode, setIsDarkMode] = useState(false);
+  
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  var googleTranslateElementInit = () => {
+// Googel Translator
+  const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
         pageLanguage: "en",

@@ -1,4 +1,5 @@
 https://pawel-w88.github.io/alibi_generator/
+
 # Alibi Generator
 
 Welcome to the Alibi Generator project! This project is a simple web application built using React that generates alibis for various scenarios. Whether you need an excuse for family events, office situations, or just a funny story, this app has got you covered.
@@ -16,16 +17,17 @@ Welcome to the Alibi Generator project! This project is a simple web application
 Clone the repository to your local machine:
 
 1. git clone https://github.com/your-username/alibi-generator.git
-   Navigate to the project directory:
 
-2. cd alibi-generator
-   Install the dependencies:
+2. Navigate to the project directory:
+   cd alibi-generator
 
-3. npm install
-   Run the application:
+3. Install the dependencies:
+   npm install
 
-4. npm start
-   This will start the development server, and you can access the application at http://localhost:3000 in your browser.
+4. Run the application:
+   npm run dev
+
+   This will start the development server, and you can access the application at http://http://localhost:5173/alibi_generator in your browser.
 
 # Dependencies
 
@@ -33,7 +35,7 @@ Clone the repository to your local machine:
 
 **Axios**: A promise-based HTTP client for making API requests.
 
-**react-spinners**: A collection of loading spinner components for React.
+**React-spinners**: A collection of loading spinner components for React.
 
 **ThemeContext**: A React context for managing the theme of the application.
 
